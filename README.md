@@ -1,5 +1,3 @@
-**VoiceMate Voice Assistant App**
-
 ![VoiceMate Logo](logo.png)
 
 *Your Personal Voice Assistant - Simplify Your Daily Tasks!*
