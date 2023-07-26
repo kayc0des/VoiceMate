@@ -1,6 +1,6 @@
 **VoiceMate Voice Assistant App**
 
-![VoiceMate Logo](link_to_logo_image)
+![VoiceMate Logo](logo.png)
 
 *Your Personal Voice Assistant - Simplify Your Daily Tasks!*
 
@@ -8,7 +8,7 @@
 
 ### Introduction
 
-Welcome to VoiceMate - your personal voice assistant app built by a group of enthusiastic college students. VoiceMate aims to provide a user-friendly and customizable voice assistant solution, empowering you to streamline your daily tasks and boost productivity through simple voice commands. This Readme file will guide you through the app's features, setup instructions, and how to get started.
+Welcome to VoiceMate - your personal voice assistant app built by a group of enthusiastic students. VoiceMate aims to provide a user-friendly and customizable voice assistant solution, empowering you to streamline your daily tasks and boost productivity through simple voice commands. This Readme file will guide you through the app's features, setup instructions, and how to get started.
 
 ### Features
 
