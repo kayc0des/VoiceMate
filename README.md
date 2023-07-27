@@ -1,4 +1,4 @@
-![VoiceMate Logo](logo.png)
+![VoiceMate Logo](assets/logo.png)
 
 *Your Personal Voice Assistant - Simplify Your Daily Tasks!*
 
