@@ -1,4 +1,4 @@
-from voicemate.text_to_speech import respond
+from text_to_speech import respond
 
 class ReminderFeature:
     # Class to handle the voice-activated reminder feature
