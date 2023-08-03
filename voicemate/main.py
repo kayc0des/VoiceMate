@@ -47,6 +47,9 @@ def main():
                 if time:
                     # Call the set_reminder method of the ReminderFeature instance
                     reminder_feature.set_reminder(reminder_text, time)
+                elif "quit" in command:
+                    print("VoiceMate is quitting...")
+                    break
                 else:
                     print("Could not extract time from the command. Please try again.")
 
