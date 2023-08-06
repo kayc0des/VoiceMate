@@ -5,6 +5,7 @@ from text_to_speech import say_message
 import requests #pip3 install requests
 import os
 from datetime import datetime
+import pywhatkit
 
 recognizer = sr.Recognizer()
 user_api = os.getenv('WEATHERAPP_KEY', default=None)
@@ -89,6 +90,10 @@ def main():
                 city_index = words.index("weather") + 1
                 city_name = " ".join(words[city_index:])
                 get_weather(city_name)
+            elif "play" in command:
+                song = command.replace('play', '')
+                talk('playing' + song)
+                pywhatkit.playonyt(song)
             elif "stop assistant" in command:
                 say_message("VoiceMate is quitting...")
                 break
