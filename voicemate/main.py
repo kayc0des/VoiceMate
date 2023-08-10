@@ -5,7 +5,7 @@ from text_to_speech import say_message
 import requests #pip3 install requests
 import os
 from datetime import datetime
-import pywhatkit
+from random import randint
 
 recognizer = sr.Recognizer()
 user_api = os.getenv('WEATHERAPP_KEY', default=None)
@@ -60,6 +60,21 @@ def get_weather(city):
 
         say_message(weather_info)
 
+
+def say_joke():
+    Funjokes = [
+        "Why was 6 afraid of 7? Because 7 ate 9. hahaha",
+        "Why can't you trust atoms? Because they make up everything. hahaha",
+        "Why won’t it hurt if you hit your friend with a 2-liter of soda? Because it’s a soft drink! hahaha",
+        "Why did the mushrooms get invited to all the best parties? He was a fun-gi! hahaha",
+        "Why do you smear peanut butter on the road? To go with the traffic jam. hahaha",
+        "What gets more wet the more it dries? A towel! hahaha",
+        "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve. hahaha",
+        "What do pampered cows produce? Spoiled milk. hahaha",
+        "What does a house wear? Address! hahaha",
+    ]
+    say_message(Funjokes[randint(0, len(Funjokes) - 1)])
+
 def main():
     """Main function to run Voicemate"""
     say_message("VoiceMate - Your Personal Voice Assistant")
@@ -90,10 +105,8 @@ def main():
                 city_index = words.index("weather") + 1
                 city_name = " ".join(words[city_index:])
                 get_weather(city_name)
-            elif "play" in command:
-                song = command.replace('play', '')
-                talk('playing' + song)
-                pywhatkit.playonyt(song)
+            elif "say a joke" in command:
+                say_joke()
             elif "stop assistant" in command:
                 say_message("VoiceMate is quitting...")
                 break
