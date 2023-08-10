@@ -6,6 +6,7 @@ import requests #pip3 install requests
 import os
 from datetime import datetime
 from random import randint
+import webbrowser
 
 recognizer = sr.Recognizer()
 user_api = os.getenv('WEATHERAPP_KEY', default=None)
@@ -60,6 +61,19 @@ def get_weather(city):
 
         say_message(weather_info)
 
+def open_spotify():
+    spotify_url = "spotify:"
+    webbrowser.open(spotify_url)
+    say_message("Opening Spotify.")
+
+def extract_location_from_command(command):
+    # Extract the location following "in"
+    parts = command.split(" ")
+    in_index = parts.index("in")
+    if in_index < len(parts) - 1:
+        location = " ".join(parts[in_index + 1:])
+        return location
+    return None
 
 def say_joke():
     Funjokes = [
@@ -98,15 +112,16 @@ def main():
                     reminder_feature.set_reminder(reminder_text, time)
                 else:
                     say_message("Could not extract time from the command. Please try again.")
-            elif "weather" in command:
-                # Extract the city name from the command
-                # Assuming the user says something like "What's the weather in London?"
-                words = command.split()
-                city_index = words.index("weather") + 1
-                city_name = " ".join(words[city_index:])
-                get_weather(city_name)
+            elif "weather" in command and "in" in command:
+                location = extract_location_from_command(command)
+                if location:
+                    get_weather(location)
+                else:
+                    say_message("Location not recognized. Please try again.")
             elif "say a joke" in command:
                 say_joke()
+            elif "open Spotify" in command:
+                open_spotify()
             elif "stop assistant" in command:
                 say_message("VoiceMate is quitting...")
                 break
