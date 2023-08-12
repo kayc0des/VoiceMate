@@ -14,16 +14,40 @@ intent_classifier = IntentClassifier()
 
 class Assistant:
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
         self.recognizer = sr.Recognizer()
 
-        """self.robot_label = tk.Label(name, text="🤖", font=("Arial", 240))
-        self.robot_label.config(fg="black")  # Initial color
-        self.robot_label.pack()"""
+        self.root = tk.Tk()
+        self.root.title("VoiceMate")
 
-        # Start a thread to change the robot color when say_message is called
-        #threading.Thread(target=self.change_color_thread).start()
+        self.robot_label = tk.Label(self.root, text="🤖", font=("Arial", 240))
+        self.robot_label.config(fg="black")  # Initial color
+        self.robot_label.pack()
+
+        self.close_button = tk.Button(self.root, text="Close", command=self.close_window)
+        self.close_button.pack()
+
+        say_message("Hi, I'm Zara")
+
+        while True:
+            user_input = self.listen_for_command()
+
+            if user_input is None:
+                continue
+
+            response = self.reply(user_input)
+            say_message(response)
+
+            intent = self.predict_intent(user_input)
+            if intent == "leaving":
+                break
+
+            self.root.update()  # Update the GUI
+
+        self.root.mainloop()
+
+    def close_window(self):
+        self.root.destroy()
 
     def listen_for_command(self):
         """
@@ -82,23 +106,6 @@ class Assistant:
         else:
             say_message("Sorry, I cannot open Google Chrome on this platform.")
 
-def main_loop():
-    say_message("Hi, I'm Zara")
-
-    while True:
-        assistant = Assistant("Zara")
-        user_input = assistant.listen_for_command()
-
-        if user_input is None:
-            continue
-
-        response = assistant.reply(user_input)
-        say_message(response)
-        
-        intent = assistant.predict_intent(user_input) 
-        if intent == "leaving":
-            break
-
 # Example usage
 if __name__ == "__main__":
-    main_loop()
+    assistant = Assistant()
