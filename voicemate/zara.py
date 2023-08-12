@@ -5,6 +5,9 @@ from text_to_speech import say_message
 import speech_recognition as sr
 import sys
 import subprocess
+import tkinter as tk
+import threading
+import time
 
 recognizer = sr.Recognizer()
 intent_classifier = IntentClassifier()
@@ -15,6 +18,35 @@ class Assistant:
         self.name = name
         self.recognizer = sr.Recognizer()
 
+        """self.robot_label = tk.Label(name, text="🤖", font=("Arial", 240))
+        self.robot_label.config(fg="black")  # Initial color
+        self.robot_label.pack()"""
+
+        # Start a thread to change the robot color when say_message is called
+        #threading.Thread(target=self.change_color_thread).start()
+
+    def listen_for_command(self):
+        """
+        Function to listen for voice commands and convert them to text
+        """
+        with sr.Microphone() as source:
+            #print("Listening for a command...")
+            say_message("Listening for a command...")
+            recognizer.adjust_for_ambient_noise(source)
+            audio = recognizer.listen(source)
+
+            try:
+                command = recognizer.recognize_google(audio).lower()
+                print(f"Command recognized: {command}")
+                return command
+            except sr.UnknownValueError:
+                say_message("Could not understand the audio. Please try again.")
+                return None
+            except sr.WaitTimeoutError:
+                say_message("Shutting down VoiceMate...")
+                return "shutdown"
+        
+        
     def reply(self, text):
         intent = self.predict_intent(text)
         response = self.generate_response(intent)
@@ -41,49 +73,32 @@ class Assistant:
             return response
     
     def handle_open_intent(self):
-        if "chrome" in user_input:
-            if sys.platform == "win32":  # Windows
-                subprocess.run(["start", "chrome"])
-            elif sys.platform == "darwin":  # macOS
-                subprocess.run(["open", "-a", "Google Chrome"])
-            elif sys.platform.startswith("linux"):  # Linux
-                subprocess.run(["google-chrome"])
-            else:
-                say_message("Sorry, I cannot open Google Chrome on this platform.")
+        if sys.platform == "win32":  # Windows
+            subprocess.run(["start", "chrome"])
+        elif sys.platform == "darwin":  # macOS
+            subprocess.run(["open", "-a", "Google Chrome"])
+        elif sys.platform.startswith("linux"):  # Linux
+            subprocess.run(["google-chrome"])
+        else:
+            say_message("Sorry, I cannot open Google Chrome on this platform.")
 
-
-# Example usage
-if __name__ == "__main__":
-    assistant = Assistant("ChatBot")
+def main_loop():
     say_message("Hi, I'm Zara")
 
     while True:
-        def listen_for_command(timeout=5):
-            """
-            Function to listen for voice commands and convert them to text
-            """
-            with sr.Microphone() as source:
-                #print("Listening for a command...")
-                say_message("Listening for a command...")
-                recognizer.adjust_for_ambient_noise(source)
-                audio = recognizer.listen(source)
+        assistant = Assistant("Zara")
+        user_input = assistant.listen_for_command()
 
-                try:
-                    command = recognizer.recognize_google(audio).lower()
-                    print(f"Command recognized: {command}")
-                    return command
-                except sr.UnknownValueError:
-                    say_message("Could not understand the audio. Please try again.")
-                    return None
-                except sr.WaitTimeoutError:
-                    say_message("Shutting down VoiceMate...")
-                    return "shutdown"
-        assistant = Assistant("ChatBot")
-        user_input = listen_for_command()
+        if user_input is None:
+            continue
+
         response = assistant.reply(user_input)
         say_message(response)
         
-        intent = assistant.predict_intent(user_input)
-        
+        intent = assistant.predict_intent(user_input) 
         if intent == "leaving":
             break
+
+# Example usage
+if __name__ == "__main__":
+    main_loop()
