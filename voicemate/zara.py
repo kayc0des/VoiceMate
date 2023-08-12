@@ -27,6 +27,11 @@ class Assistant:
         self.close_button = tk.Button(self.root, text="Close", command=self.close_window)
         self.close_button.pack()
 
+        self.root.after(0, self.start_main_loop)  # Start main loop after GUI setup
+
+        self.root.mainloop()
+
+    def start_main_loop(self):
         say_message("Hi, I'm Zara")
 
         while True:
@@ -43,8 +48,7 @@ class Assistant:
                 break
 
             self.root.update()  # Update the GUI
-
-        self.root.mainloop()
+            self.root.after(100)  # Delay to prevent GUI from becoming unresponsive
 
     def close_window(self):
         self.root.destroy()
