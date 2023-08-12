@@ -18,7 +18,7 @@ class Assistant:
         self.recognizer = sr.Recognizer()
 
         self.root = tk.Tk()
-        self.root.title("VoiceMate")
+        self.root.title("Zara by VoiceMate")
 
         self.robot_label = tk.Label(self.root, text="🤖", font=("Arial", 240))
         self.robot_label.config(fg="black")  # Initial color
