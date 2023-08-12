@@ -1,0 +1,44 @@
+{
+    "data": [
+      {
+        "intent": "greeting",
+        "text": "hello"
+      },
+      {
+        "intent": "greeting",
+        "text": "hi"
+      },
+      {
+        "intent": "greeting",
+        "text": "good morning"
+      },
+      {
+        "intent": "greeting",
+        "text": "good evening"
+      },
+      {
+        "intent": "question",
+        "text": "what is the capital of France?"
+      },
+      {
+        "intent": "question",
+        "text": "what is the population of China?"
+      },
+      {
+        "intent": "question",
+        "text": "what is the square root of 16?"
+      },
+      {
+        "intent": "command",
+        "text": "open the web browser"
+      },
+      {
+        "intent": "command",
+        "text": "play music"
+      },
+      {
+        "intent": "command",
+        "text": "turn on the light"
+      }
+    ]
+  }

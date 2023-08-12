@@ -1,0 +1,44 @@
+{
+    "greeting": [
+        "Hello! How can I assist you?",
+        "Hey there! How can I help?",
+        "Hi, what can I do for you?"
+    ],
+    "leaving": [
+        "Goodbye! Have a great day!",
+        "Farewell! Take care.",
+        "See you later!"
+    ],
+    "weather": [
+        "The weather is currently sunny with a temperature of 25°C.",
+        "It's a beautiful day outside!",
+        "The current temperature is 25°C."
+    ],
+    "jokes": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Parallel lines have so much in common. It's a shame they'll never meet.",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "What do you call a fish wearing a crown? Kingfish.",
+        "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them.",
+        "I'm reading a book on anti-gravity. It's impossible to put down!",
+        "Why did the bicycle fall over? Because it was two-tired.",
+        "Why did the tomato turn red? Because it saw the salad dressing.",
+        "What did one wall say to the other wall? I'll meet you at the corner!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Parallel lines have so much in common. It's a shame they'll never meet.",
+        "Why don't skeletons fight each other? They don't have the guts.",
+        "What do you call a snowman with a six-pack? An abdominal snowman.",
+        "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+        "How do you make a tissue dance? You put a little boogie in it.",
+        "Why was the math book sad? Because it had too many problems.",
+        "What's orange and sounds like a parrot? A carrot.",
+        "Why don't oysters donate to charity? Because they're shellfish.",
+        "I told my wife she was drawing her eyebrows too high. She seemed surprised.",
+        "Why don't scientists trust atoms? Because they make up everything!"
+    ],
+    "default": [
+        "I'm sorry, I couldn't understand your intent.",
+        "I'm not sure what you mean.",
+        "Could you please rephrase that?"
+    ]
+}

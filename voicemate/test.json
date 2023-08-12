@@ -1,0 +1,23 @@
+{"test": [
+        {"tag": "greeting",
+            "patterns": ["Hi", "Hello", "Hey", "What's up?", "Hey how are you doing?"],
+            "responses" : ["Hey there!", "Hello, What can I do for you?"],
+            "context_set": ""
+        },
+        {"tag": "Luna",
+            "patterns": ["What is Luna", "Tell me about Luna", "Who is Luna"],
+            "responses" : ["Luna is an extension of voicemate and a voice assistant bot developed by the Voice Mate team."],
+            "context_set": ""   
+        },
+        {"tag": "name",
+            "patterns": ["What is your name", "What should I call you"],
+            "responses": ["Please call me Luna", "My name is Luna"],
+            "context_set": ""
+        },
+        {"tag": "file",
+            "patterns": ["Create a file", "Create new file"],
+            "responses": ["Sure, I can help you create a new file."],
+            "context_set": ""
+        }
+    ]
+}

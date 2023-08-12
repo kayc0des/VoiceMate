@@ -1,0 +1,18 @@
+text,intent
+how are you?,greeting
+hello,greeting
+hey,greeting
+hi,greeting
+see you later,leaving
+talk to you later,leaving
+hows the weather,weather
+whats the temperature,weather
+open chrome,chrome
+open chrome browser,chrome
+chrome browser,chrome
+I need something to cheer me up,jokes
+cheer me up,jokes
+tell me something funny,jokes
+make me laugh,jokes
+say a joke,jokes
+show me how funny you are,jokes

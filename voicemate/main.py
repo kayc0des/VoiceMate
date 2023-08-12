@@ -118,7 +118,7 @@ def main():
                     get_weather(location)
                 else:
                     say_message("Location not recognized. Please try again.")
-            elif "say a joke" in command:
+            elif "a joke" in command:
                 say_joke()
             elif "open Spotify" in command:
                 open_spotify()
