@@ -1,17 +1,24 @@
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
+import pandas as pd #pip3 install pandas
+from sklearn.feature_extraction.text import CountVectorizer #pip3 install scikit-learn
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
+
+#Trains the systen to predict user intent based on some trained data
 
 class IntentClassifier:
 
     def __init__(self):
-        self.data = pd.read_csv('data.csv') #Read the CSV file
+        """
+        Initialization function when an instance of the class
+        is created
+        """
+        self.data = pd.read_csv('data.csv') #Reads the CSV file
 
         self.train()
 
     def train(self):
-        X_train, y_train = self.data['text'], self.data['intent']
+        X_train = self.data['text']
+        y_train = self.data['intent']
         self.count_vect = CountVectorizer()
         X_train_counts = self.count_vect.fit_transform(X_train)
         tfidf_transformer = TfidfTransformer()
@@ -25,4 +32,8 @@ class IntentClassifier:
         return self.clf.predict(self.count_vect.transform([text]))[0]
     
 #test
-intent_classifier = IntentClassifier()
+sample_cls = IntentClassifier()
+
+#print systeminfo
+text = "Hey, what's good?"
+print(sample_cls.predict(text))

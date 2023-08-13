@@ -9,7 +9,7 @@ import tkinter as tk
 import threading
 import time
 
-recognizer = sr.Recognizer()
+recognizer = sr.Recognizer() #Creating an instance of the Recognizer class
 intent_classifier = IntentClassifier()
 
 class Assistant:
@@ -35,12 +35,12 @@ class Assistant:
         say_message("Hi, I'm Zara")
 
         while True:
-            user_input = self.listen_for_command()
+            user_input = self.listen_for_command() #It listens and converts user speech command to text and saves it in user_input
 
             if user_input is None:
                 continue
 
-            response = self.reply(user_input)
+            response = self.reply(user_input) #If user_input then call the reply method
             say_message(response)
 
             intent = self.predict_intent(user_input)
@@ -76,8 +76,8 @@ class Assistant:
         
         
     def reply(self, text):
-        intent = self.predict_intent(text)
-        response = self.generate_response(intent)
+        intent = self.predict_intent(text) #Intent Classification to predict user intent 
+        response = self.generate_response(intent) #it calls the generate response method of the Assistant Class
         return response
 
     def predict_intent(self, text):

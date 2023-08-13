@@ -36,6 +36,10 @@
         "I told my wife she was drawing her eyebrows too high. She seemed surprised.",
         "Why don't scientists trust atoms? Because they make up everything!"
     ],
+    "systeminfo" : [
+        "Zara is an extension of VoiceMate, built by Group 4. The main technologies used includes python as main programming language and pandas, scikit learn and gTTS libraries",
+        "Zara is an extension of VoiceMate, and a userfriendly bot"
+    ],
     "default": [
         "I'm sorry, I couldn't understand your intent.",
         "I'm not sure what you mean.",
