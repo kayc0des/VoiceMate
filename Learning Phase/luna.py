@@ -70,4 +70,3 @@ class Assistant:
                 continue
 
 Assistant()
-
