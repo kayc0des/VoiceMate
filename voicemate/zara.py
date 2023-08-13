@@ -20,7 +20,7 @@ class Assistant:
         self.root = tk.Tk()
         self.root.title("Zara by VoiceMate")
 
-        self.robot_label = tk.Label(self.root, text="🤖", font=("Arial", 120))
+        self.robot_label = tk.Label(self.root, text="👧🏾", font=("Arial", 120))
         self.robot_label.config(fg="black")  # Initial color
         self.robot_label.pack()
 
