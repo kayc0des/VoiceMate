@@ -20,7 +20,7 @@ class Assistant:
         self.root = tk.Tk()
         self.root.title("Zara by VoiceMate")
 
-        self.robot_label = tk.Label(self.root, text="🤖", font=("Arial", 240))
+        self.robot_label = tk.Label(self.root, text="🤖", font=("Arial", 120))
         self.robot_label.config(fg="black")  # Initial color
         self.robot_label.pack()
 
@@ -53,7 +53,7 @@ class Assistant:
     def close_window(self):
         self.root.destroy()
 
-    def listen_for_command(self):
+    def listen_for_command(self, timeout=5):
         """
         Function to listen for voice commands and convert them to text
         """
