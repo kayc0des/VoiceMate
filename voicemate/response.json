@@ -4,6 +4,10 @@
         "Hey there! How can I help?",
         "Hi, what can I do for you?"
     ],
+    "selfcheck": [
+        "I'm doing great, thank you for asking. How can I help you?",
+        "It's great day today, thanks for checking up. What can I do for you?"
+    ],
     "leaving": [
         "Goodbye! Have a great day!",
         "Farewell! Take care.",
@@ -37,8 +41,27 @@
         "Why don't scientists trust atoms? Because they make up everything!"
     ],
     "systeminfo" : [
-        "Zara is an extension of VoiceMate, built by Group 4. The main technologies used includes python as main programming language and pandas, scikit learn and gTTS libraries",
-        "Zara is an extension of VoiceMate, and a userfriendly bot"
+        "Zara is an extension of VoiceMate, developed by VoiceMate. It serves as a friendly and intelligent voice assistant.",
+        "Zara is designed to make your interactions with technology more seamless and enjoyable.",
+        "Zara's foundation is built upon cutting-edge technologies, including Python programming language and machine learning libraries.",
+        "With Zara, you can have natural and meaningful conversations, ask questions, get information, and even have a good laugh.",
+        "Zara aims to bridge the gap between humans and technology, making technology more accessible and user-friendly.",
+        "The development of Zara involved teamwork, creativity, and a deep understanding of natural language processing.",
+        "Zara is a testament to the potential of AI and how it can enhance our daily lives.",
+        "As an AI assistant, Zara is continuously learning and improving, adapting to user needs and preferences.",
+        "Zara's creators are excited to see how users interact with and benefit from this innovative voice assistant."
+    ],
+    "devinfo": [
+        "Zara was crafted by Group 4, a team of skilled individuals at VoiceMate.",
+        "The masterminds behind Zara's creation are Flore, Davis, Arsene, and Kingsley of the VoiceMate team.",
+        "Meet the brilliant minds who brought Zara to life: Flore, Davis, Arsene, and Kingsley.",
+        "Zara is the brainchild of the talented team known as VoiceMate, which includes Flore, Davis, Arsene, and Kingsley.",
+        "Flore, Davis, Arsene, and Kingsley from VoiceMate joined forces to build and develop Zara.",
+        "The creators of Zara are none other than Flore, Davis, Arsene, and Kingsley of the VoiceMate team.",
+        "VoiceMate's exceptional team members Flore, Davis, Arsene, and Kingsley are the architects of Zara.",
+        "Zara's creators are the dedicated individuals at VoiceMate: Flore, Davis, Arsene, and Kingsley.",
+        "The team behind Zara's creation comprises Flore, Davis, Arsene, and Kingsley from VoiceMate.",
+        "You're interacting with Zara, brought to you by the talented team at VoiceMate: Flore, Davis, Arsene, and Kingsley."
     ],
     "default": [
         "I'm sorry, I couldn't understand your intent.",

@@ -35,5 +35,5 @@ class IntentClassifier:
 sample_cls = IntentClassifier()
 
 #print systeminfo
-text = "Hey, what's good?"
-print(sample_cls.predict(text))
+# text = "Hey, what's good?"
+# print(sample_cls.predict(text))

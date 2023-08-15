@@ -6,8 +6,10 @@ import speech_recognition as sr
 import sys
 import subprocess
 import tkinter as tk
+import platform
 import threading
 import time
+import os
 
 recognizer = sr.Recognizer() #Creating an instance of the Recognizer class
 intent_classifier = IntentClassifier()
@@ -53,13 +55,20 @@ class Assistant:
     def close_window(self):
         self.root.destroy()
 
+    def play_beep(self):
+        if platform.system() == "Darwin": # macOS
+            os.system("afplay beep.wav")
+        elif platform.system() == "Windows": # Windows
+            os.system("start wmplayer beep.wav")
+
     def listen_for_command(self, timeout=5):
         """
         Function to listen for voice commands and convert them to text
         """
         with sr.Microphone() as source:
             #print("Listening for a command...")
-            say_message("Listening for a command...")
+            #say_message("Listening for a command...")
+            self.play_beep()
             recognizer.adjust_for_ambient_noise(source)
             audio = recognizer.listen(source)
 
@@ -92,6 +101,14 @@ class Assistant:
              self.handle_open_intent()
              response = "Opening Chrome"
              return response
+        elif intent == "file":
+            self.create_sample_file()
+            response = "Creating a file for you"
+            return response
+        elif intent == "kill":
+            self.kill_all_processes()
+            response = "Killing all process! Goodbye"
+            return response
         else:
             # Get the list of responses for the intent, or use the default list
             response_list = responses.get(intent, responses["default"])
@@ -109,6 +126,34 @@ class Assistant:
             subprocess.run(["google-chrome"])
         else:
             say_message("Sorry, I cannot open Google Chrome on this platform.")
+
+    def create_sample_file(self):
+        file_name = "sample_zara.txt"
+    
+        if platform.system() == "Darwin":  # macOS
+            desktop_path = os.path.expanduser("~/Desktop")
+            file_path = os.path.join(desktop_path, file_name)
+        elif platform.system() == "Windows":  # Windows
+            desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+            file_path = os.path.join(desktop_path, file_name)
+        else:
+            return "Sorry, creating files is not supported on this platform."
+    
+        try:
+            with open(file_path, "w") as file:
+                file.write("This is a sample file created by Zara.")
+                return f"Sample file created at {file_path}"
+        except Exception as e:
+            return f"Error creating sample file: {e}"
+        
+    def kill_all_processes(self):
+        if platform.system() == "Windows":
+            subprocess.run("taskkill /F /FI \"STATUS eq RUNNING\"", shell=True)
+        elif platform.system() == "Darwin":
+            os.system("osascript -e 'tell application \"System Events\" to set visible of every application process to false'")
+        else:
+            say_message("Sorry, killing all processes is not supported on this platform.")
+
 
 # Example usage
 if __name__ == "__main__":

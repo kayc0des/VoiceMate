@@ -1,5 +1,8 @@
 text,intent
-how are you?,greeting
+how are you?,selfcheck
+hoa are you today?,selfcheck
+what's up?,selfcheck
+how are you feeling?,selfcheck
 hello,greeting
 hey,greeting
 hi,greeting
@@ -7,6 +10,7 @@ see you later,leaving
 talk to you later,leaving
 hows the weather,weather
 whats the temperature,weather
+tell me more about the weather,weather
 open chrome,chrome
 open chrome browser,chrome
 chrome browser,chrome
@@ -18,5 +22,16 @@ say a joke,jokes
 show me how funny you are,jokes
 whats zara?,systeminfo
 tell me more about zara,systeminfo
-what team worked on zara,systeminfo
 whats special about zara?,systeminfo
+who is zara/,systeminfo
+what team worked on zara,devinfo
+who is your creator?,devinfo
+who built zara?,devinfo
+which team wrote the code?,devinfo
+create a new file for me,file
+create a sample file,file
+creat a file,file
+close all running proccesses,kill
+close all windows,kill
+cose all active windows,kill
+kill all proccesses,kill
