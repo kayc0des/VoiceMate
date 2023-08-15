@@ -47,6 +47,7 @@ class Assistant:
 
             intent = self.predict_intent(user_input)
             if intent == "leaving":
+                self.close_window() 
                 break
 
             self.root.update()  # Update the GUI

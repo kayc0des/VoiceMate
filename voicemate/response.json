@@ -67,5 +67,12 @@
         "I'm sorry, I couldn't understand your intent.",
         "I'm not sure what you mean.",
         "Could you please rephrase that?"
-    ]
+    ],
+    "ability": [
+        "I have a variety of capabilities! For example, I can open Google Chrome, create new files, tell jokes, and even close all windows if you want.",
+        "My abilities include opening Google Chrome, creating files, telling jokes, and closing all windows. Just let me know what you'd like me to do!",
+        "I'm here to assist you! Right now, I can open Google Chrome, create new files, tell jokes, and close all windows if needed.",
+        "Currently, I can open Google Chrome, create files, tell jokes, and close all windows. Feel free to ask me to perform any of these tasks!",
+        "Zara's capabilities are expanding! At the moment, I can open Google Chrome, create new files, tell jokes, and close all windows. How can I assist you?"
+    ]    
 }
