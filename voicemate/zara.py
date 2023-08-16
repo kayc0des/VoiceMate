@@ -10,6 +10,7 @@ import platform
 import threading
 import time
 import os
+import random
 
 recognizer = sr.Recognizer() #Creating an instance of the Recognizer class
 intent_classifier = IntentClassifier()
@@ -129,7 +130,8 @@ class Assistant:
             say_message("Sorry, I cannot open Google Chrome on this platform.")
 
     def create_sample_file(self):
-        file_name = "sample_zara.txt"
+        random_number = random.randint(1, 10000)
+        file_name = f"sample_zara_{random_number}.txt"
     
         if platform.system() == "Darwin":  # macOS
             desktop_path = os.path.expanduser("~/Desktop")
