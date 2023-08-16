@@ -7,7 +7,7 @@ from playsound import playsound
 import os
 
 import speech_recognition as sr
-from text_to_speech import say_message
+#xsfrom text_to_speech import say_message
 
 from neuralintents import GenericAssistant
 
